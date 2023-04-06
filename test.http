@@ -1,0 +1,109 @@
+## 1. User APIs : 유저 SignUp / Login / Logout
+# 1. SignUp API
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{"password":"{{PASSWORD}}", "re_password":"{{RE_PASSWORD}}", "email":"{{EMAIL}}", "fullname":"{{FULL_NAME}}"}
+
+###
+
+# 1-1. SignUp view
+GET http://localhost:5000/signup
+###
+
+# 1-2. CheckEmail API
+POST http://localhost:5000/check-email
+Content-Type: application/json
+
+{"email":"{{EMAIL}}"}
+
+###
+# 2. Login API
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{"password":"{{PASSWORD}}", "email": "{{EMAIL}}"}
+
+###
+
+# 2-1. login view
+GET http://localhost:5000/login
+###
+
+# 2-2 session check
+GET http://localhost:5000/
+
+###
+# 3 logout
+#GET http://localhost:5000/logout
+# 중간에 로그아웃해버리면 테스트가 안되니 맨 뒤에 다시 추가
+###
+
+## 2. Board APIs : 게시판 CRUD
+# 1. Create API
+PUT http://localhost:5000/api/boards
+Content-Type: application/json
+
+{"name":"{{CREATE_BOARD_NAME}}"}
+
+###
+
+# 2. List API
+
+GET localhost:5000/api/boards?page=1&limit=2
+
+
+###
+
+# 3. Update API
+POST http://localhost:5000/api/boards/1
+Content-Type: application/json
+
+{"name":"{{EDIT_BOARD_NAME}}"}
+
+
+###
+# 게시판 삭제
+DELETE http://localhost:5000/api/boards/1
+Content-Type: application/json
+
+{}
+
+###
+
+# 5. ArticleList
+GET http://localhost:5000/api/boards/1?page=1&limit=2
+###
+
+## 3. BoardArticle APIs
+#1. Create API : 게시판 글 CRUD
+
+###
+PUT http://localhost:5000/api/boards/1/board-articles
+Content-Type: application/json
+
+{"contents":"{{CREATE_ARTICLE_CONTENTS}}", "title": "{{CREATE_ARTICLE_TITLE}}"}
+
+###
+
+# 2. Get API
+GET localhost:5000/api/boards/1/board-articles/1
+
+
+###
+
+#3. Update API
+POST http://localhost:5000/api/boards/1/board-articles/1
+Content-Type: application/json
+
+{"contents":"{{UPDATE_ARTICLE_TITLE}}", "title": "{{UPDATE_ARTICLE_CONTENTS}}"}
+
+###
+
+#4. Delete API
+DELETE http://localhost:5000/api/boards/1/board-articles/1
+Content-Type: application/json
+###
+
+GET http://localhost:5000/logout
+

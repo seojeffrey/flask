@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+</head>
+<body>
+<div>
+    <h1>회원가입</h1>
+</div>
+<div>
+    <form method="POST" action="/signup">
+        <div>
+            <label for="email">이메일</label>
+            <input type="text" id="email" placeholder="이메일" name="email"/>
+        </div>
+        <div>
+            <label for="fullname">이름</label>
+            <input type="text" id="fullname" placeholder="이름" name="fullname"/>
+        </div>
+        <div>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" placeholder="비밀번호" name="password"/>
+        </div>
+        <div>
+            <label for="re_password">비밀번호 확인</label>
+            <input type="password" id="re_password" placeholder="비밀번호 확인" name="re_password"/>
+        </div>
+        <button type="submit">등록</button>
+    </form>
+
+    <br>
+      <form method="post" action="/check_email">
+        <div>
+            <label for="email">이메일</label>
+            <input type="text" id="email" placeholder="이메일" name="email"/>
+        </div>
+        <p><input type=submit value=이메일 확인하기></p>
+    </form>
+</div>
+
+</body>
+</html>

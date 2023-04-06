@@ -1,0 +1,6 @@
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 25100
+
+
+REDIS_URI = f'redis://{REDIS_HOST}:{REDIS_PORT}'
